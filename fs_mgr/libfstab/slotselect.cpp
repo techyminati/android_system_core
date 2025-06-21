@@ -28,13 +28,7 @@ using namespace android::fs_mgr;
 // All partitions that are A/B-ed should be named as follows (slots are always
 // named a, b, etc.): boot_a, boot_b, system_a, system_b, vendor_a, vendor_b.
 static std::string other_suffix(const std::string& slot_suffix) {
-    if (slot_suffix == "_a") {
-        return "_b";
-    }
-    if (slot_suffix == "_b") {
-        return "_a";
-    }
-    return "";
+    return "_a";
 }
 
 // Returns "_b" or "_a", which is *the other* slot of androidboot.slot_suffix
